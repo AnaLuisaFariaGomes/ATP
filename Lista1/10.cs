@@ -10,13 +10,19 @@ namespace Ex10
     {
         static void Main(string[] args)
         {
-            int numOriginal, novaUnidade, novaCentena, novadezena;
+            int numOriginal, novaUnidade, novaCentena, novaDezena;
 
             Console.WriteLine("Digite um número inteiro de 3 dígitos: ");
             numOriginal = int.Parse(Console.ReadLine());
 
             novaCentena = numOriginal % 10;
-            Console.WriteLine(novaCentena);
+            Console.Write("Numero novo: " + novaCentena);
+
+            novaDezena = (numOriginal / 10) % 10;
+            Console.Write(novaDezena);
+
+            novaUnidade = numOriginal / 100;
+            Console.WriteLine(novaUnidade);
         }
     }
 }
