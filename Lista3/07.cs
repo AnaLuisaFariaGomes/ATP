@@ -68,6 +68,9 @@ namespace Ex07
                         Console.WriteLine("Opção inválida");
                         break;
                 }
+
+                Console.WriteLine("Digite qual operação quer realizar: ");
+                op = int.Parse(Console.ReadLine());
             }
         }
     }
