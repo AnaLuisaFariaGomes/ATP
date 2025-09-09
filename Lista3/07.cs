@@ -22,7 +22,7 @@ namespace Ex07
             Console.WriteLine("Digite qual operação quer realizar: ");
             op = int.Parse(Console.ReadLine());
 
-            while (op != 0)
+            while (op != 4)
             {
                 switch (op)
                 {
