@@ -15,11 +15,12 @@ namespace Ex05
 
             do
             {
-                Console.WriteLine("Digite o seu voto: ");
+                Console.WriteLine("*** MENU ***");
                 Console.WriteLine("1 - Candidato 1");
                 Console.WriteLine("2 - Candidato 2");
                 Console.WriteLine("3 - Candidato 3");
                 Console.WriteLine("4 - Voto Branco");
+                Console.WriteLine("Digite o seu voto: ");
                 voto = int.Parse(Console.ReadLine());
 
                 switch (voto)
