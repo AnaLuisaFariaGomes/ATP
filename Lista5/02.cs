@@ -11,9 +11,9 @@ for (int i = 0; i < original.Length; i++)
 }
 
 int[] contrario = new int[quant];
-for (int i = 0; i < quant; i++)
+for (int i = 0, j = quant - 1; i < quant; i++, j--)
 {
-    contrario[i] = original[quant - 1 - i];
+    contrario[i] = original[j];
 }
 
 int cont = 0;
