@@ -39,6 +39,10 @@ for (int i = 0; i < mat.GetLength(1); i++)
     }
 }
 Console.WriteLine($"{principal} **");
+/* OU:
+for (int i=0; i<mat.GetLength(0);i++) {
+principal += mat[i,i];
+}*/
 
 int secundaria = 0;
 Console.Write("\n** Soma da Diagonal Secundária: **");
