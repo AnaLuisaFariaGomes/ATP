@@ -38,49 +38,40 @@
         if (somaLinha != somaReferencia)
         {
             QuadradoMagico = false;
-            break;
         }
     }
 
-    if (QuadradoMagico)
+    for (int j = 0; j < n; j++)
     {
-        for (int j = 0; j < n; j++)
-        {
-            int somaColuna = 0;
-            for (int i = 0; i < n; i++)
-            {
-                somaColuna += mat[i, j];
-            }
-            if (somaColuna != somaReferencia)
-            {
-                QuadradoMagico = false;
-                break;
-            }
-        }
-    }
-
-    if (QuadradoMagico)
-    {
-        int somaDiagPrincipal = 0;
+        int somaColuna = 0;
         for (int i = 0; i < n; i++)
         {
-            somaDiagPrincipal += mat[i, i];
+            somaColuna += mat[i, j];
         }
-
-        if (somaDiagPrincipal != somaReferencia)
+        if (somaColuna != somaReferencia)
+        {
             QuadradoMagico = false;
+        }
     }
 
-    if (QuadradoMagico)
+    int somaDiagPrincipal = 0;
+    for (int i = 0; i < n; i++)
     {
-        int somaDiagSecundaria = 0;
-        for (int i = 0; i < n; i++)
-        {
-            somaDiagSecundaria += mat[i, n - 1 - i];
-        }
+        somaDiagPrincipal += mat[i, i];
+    }
+    if (somaDiagPrincipal != somaReferencia)
+    {
+        QuadradoMagico = false;
+    }
 
-        if (somaDiagSecundaria != somaReferencia)
-            QuadradoMagico = false;
+    int somaDiagSecundaria = 0;
+    for (int i = 0; i < n; i++)
+    {
+        somaDiagSecundaria += mat[i, n - 1 - i];
+    }
+    if (somaDiagSecundaria != somaReferencia)
+    {
+        QuadradoMagico = false;
     }
 
     if (QuadradoMagico)
