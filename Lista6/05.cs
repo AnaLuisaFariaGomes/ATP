@@ -1,22 +1,90 @@
-int[,] mat = new int[500, 500];
-Random r = new Random();
+    int n = 500;
+    int[,] mat = new int[n, n];
+    Random r = new Random();
 
-for (int i = 0; i < mat.GetLength(0); i++)
-{
-    for (int j = 0; j < mat.GetLength(1); j++)
+    for (int i = 0; i < mat.GetLength(0); i++)
     {
-        mat[i, j] = r.Next(100);
+        for (int j = 0; j < mat.GetLength(1); j++)
+        {
+            mat[i, j] = r.Next(100);
+        }
     }
-}
 
-Console.WriteLine("** MATRIZ **");
-for (int i = 0; i < mat.GetLength(0); i++)
-{
-    for (int j = 0; j < mat.GetLength(1); j++)
+    Console.WriteLine("** MATRIZ **");
+    for (int i = 0; i < mat.GetLength(0); i++)
     {
-        Console.Write(mat[i, j] + "\t");
+        for (int j = 0; j < mat.GetLength(1); j++)
+        {
+            Console.Write(mat[i, j] + "\t");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-}
 
-//continuar aqui
+    int somaReferencia = 0;
+    for (int j = 0; j < n; j++)
+    {
+        somaReferencia += mat[0, j];
+    }
+
+    bool QuadradoMagico = true;
+
+    for (int i = 1; i < n; i++)
+    {
+        int somaLinha = 0;
+        for (int j = 0; j < n; j++)
+        {
+            somaLinha += mat[i, j];
+        }
+        if (somaLinha != somaReferencia)
+        {
+            QuadradoMagico = false;
+            break;
+        }
+    }
+
+    if (QuadradoMagico)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            int somaColuna = 0;
+            for (int i = 0; i < n; i++)
+            {
+                somaColuna += mat[i, j];
+            }
+            if (somaColuna != somaReferencia)
+            {
+                QuadradoMagico = false;
+                break;
+            }
+        }
+    }
+
+    if (QuadradoMagico)
+    {
+        int somaDiagPrincipal = 0;
+        for (int i = 0; i < n; i++)
+        {
+            somaDiagPrincipal += mat[i, i];
+        }
+
+        if (somaDiagPrincipal != somaReferencia)
+            QuadradoMagico = false;
+    }
+
+    if (QuadradoMagico)
+    {
+        int somaDiagSecundaria = 0;
+        for (int i = 0; i < n; i++)
+        {
+            somaDiagSecundaria += mat[i, n - 1 - i];
+        }
+
+        if (somaDiagSecundaria != somaReferencia)
+            QuadradoMagico = false;
+    }
+
+    if (QuadradoMagico)
+        Console.WriteLine("A matriz é um quadrado mágico!");
+    else
+        Console.WriteLine("A matriz NÃO é um quadrado mágico.");
+}
