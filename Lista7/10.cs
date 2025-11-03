@@ -1,4 +1,4 @@
-static void GerarVetor(ref int[] vetor)
+static void GerarVetor(int[] vetor)
 {
     for (int i = 0; i < vetor.Length; i++)
     {
@@ -43,14 +43,14 @@ static void Main(string[] args)
     int[] vet1 = new int[n];
     int[] vet2 = new int[n];
 
-    GerarVetor(ref vet1);
+    GerarVetor(vet1);
     Console.WriteLine("*** VETOR 1 ***");
     for (int i = 0; i < vet1.Length; i++)
     {
         Console.Write($"{vet1[i]}\t|");
     }
 
-    GerarVetor(ref vet2);
+    GerarVetor(vet2);
     Console.WriteLine("\n*** VETOR 2 ***");
     for (int i = 0; i < vet2.Length; i++)
     {
