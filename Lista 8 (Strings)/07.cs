@@ -1,17 +1,22 @@
-static void Main(string[] args)
+static void ContadorPalavras(string frase)
 {
-    Console.WriteLine("Escreva uma palavra: ");
-    string frase = Console.ReadLine().ToUpper();
     int cont = 1;
 
     for (int i = 0; i < frase.Length; i++)
     {
-        if (' ' == frase[i] )
+        if (' ' == frase[i])
         {
             cont++;
         }
 
     }
     Console.WriteLine("Frase: " + frase);
-    Console.WriteLine("Número de palavras: "+ cont);
+    Console.WriteLine("Número de palavras: " + cont);
+}
+static void Main(string[] args)
+{
+    Console.WriteLine("Escreva uma frase: ");
+    string frase = Console.ReadLine().ToUpper();
+    
+    ContadorPalavras(frase);
 }
