@@ -10,7 +10,7 @@ namespace Ex04
     {
         private string nome;
         private int matricula;
-        private double[] notas = new double[10];
+        private double[] notas = new double[3];
 
         public Aluno(string nome, int matricula, double[] notas)
         {
@@ -22,12 +22,20 @@ namespace Ex04
         public double CalcularMedia()
         {
             double soma = 0;
+            int cont = 0;
 
             for (int i = 0; i < notas.Length; i++)
             {
                 soma += notas[i];
+                cont++;
             }
-            return soma;
+            double media = soma / cont;
+            return media;
+        }
+
+        public override string ToString()
+        {
+            return $"Aluno: {nome}\nMatricula: {matricula}";
         }
     }
 }
